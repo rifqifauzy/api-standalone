@@ -23,7 +23,6 @@ public class PersonRest {
 		Base.open();
 		LazyList<Person> persons = Person.findAll().orderBy("name");
 		String json = persons.toJson(true, "name", "address", "date_of_birth", "email");
-		System.out.println("sukses");
 		Base.close();
 		return Response.ok(json).build();
 	}

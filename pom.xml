@@ -94,6 +94,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- Setting main class -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -102,34 +103,12 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.rifqi.App</mainClass>
+							<mainClass>com.api.standalone.App</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<mainClass>com.rifqi.Main</mainClass>
-						</manifest>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
+			<!-- Setting java version -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -140,6 +119,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			<!-- Setting javalite activejdbc classes -->
 			<plugin>
 				<groupId>org.javalite</groupId>
 				<artifactId>activejdbc-instrumentation</artifactId>
@@ -153,6 +133,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- Setting javalite activejdbc properties untuk koneksi database dan setting eksekutor sql file di folder migrations -->
 			<plugin>
 				<groupId>org.javalite</groupId>
 				<artifactId>db-migrator-maven-plugin</artifactId>
@@ -181,8 +162,7 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
+				<!-- Setting lifecycle javalite activejdbc -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
