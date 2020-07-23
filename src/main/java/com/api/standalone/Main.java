@@ -5,6 +5,7 @@ import java.util.Locale;
 import org.javalite.activejdbc.Base;
 import org.javalite.activejdbc.LazyList;
 
+import com.api.standalone.model.Cities;
 import com.api.standalone.model.Person;
 import com.api.standalone.model.Province;
 import com.github.javafaker.Faker;
@@ -15,17 +16,21 @@ public class Main {
 		Base.open();
 		
 		/*generate data province if provinces table is empty*/
-		if (Province.count()==0)
-			genDataProvince();
-		LazyList<Province> provinces = Province.findAll().orderBy("name");
-		System.out.println(provinces.toJson(true, "name"));
+//		if (Province.count()==0)
+//			genDataProvince();
+//		LazyList<Province> provinces = Province.findAll().orderBy("name");
+//		System.out.println(provinces.toJson(true, "name"));
 		
 		/*generate data person if persons table is empty*/
-		/*if (Person.count().intValue()==0)
-			genDataPerson();
+//		if (Person.count().intValue()==0)
+//			genDataPerson();
 		
-		LazyList<Person> persons = Person.findAll().orderBy("name");
-		System.out.println(persons.toJson(true, "name", "address", "email", "date_of_birth"));*/
+//		LazyList<Person> persons = Person.findAll().limit(1).orderBy("name");
+//		Person person = Person.findById(502);
+//		System.out.println(person.toJson(true, "name", "address", "email", "date_of_birth"));
+		
+		LazyList<Cities> cities = Cities.findAll().orderBy("name");
+		System.out.println(cities.toJson(true));
 		
 		Base.close();
 	}
