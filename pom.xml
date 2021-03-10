@@ -11,7 +11,7 @@
 	<properties>
 		<activejdbc.version>2.3</activejdbc.version>
 		<environments>development</environments>
-		<jetty.version>9.4.7.v20170914</jetty.version>
+		<jetty.version>11.0.1</jetty.version>
 		<jersey.version>2.26</jersey.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
